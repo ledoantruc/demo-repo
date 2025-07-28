@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kong-ext
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/ledoantruc/demo-repo.git
+    targetRevision: main
+    path: kong-staging
+    helm:
+      skipCrds: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kong-ext
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

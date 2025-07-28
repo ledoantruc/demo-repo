@@ -1,0 +1,4 @@
+proxy:
+  type: LoadBalancer
+admin:
+  enabled: true

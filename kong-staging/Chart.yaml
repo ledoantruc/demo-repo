@@ -1,0 +1,8 @@
+apiVersion: v2
+name: kong-ext
+version: 0.1.0
+
+dependencies:
+  - name: kong
+    version: 2.49.0
+    repository: oci://asia-east1-docker.pkg.dev/trucld-lab2025/helm-release-oci
