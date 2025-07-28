@@ -12,8 +12,14 @@ spec:
     path: kong-staging
     plugin:
       name: helmOciGarPlugin
-    helm:
-      skipCrds: false
+      env:
+        - name: NAME
+          value: $ARGOCD_APP_NAME
+        - name: VALUES
+          value: values.yaml
+        - name: NAMESPACE
+          value: $ARGOCD_APP_NAMESPACE
+          
   destination:
     server: https://kubernetes.default.svc
     namespace: kong-ext
