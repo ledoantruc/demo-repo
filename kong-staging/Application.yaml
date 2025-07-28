@@ -10,6 +10,8 @@ spec:
     repoURL: https://github.com/ledoantruc/demo-repo.git
     targetRevision: main
     path: kong-staging
+    plugin:
+      name: helmOciGarPlugin
     helm:
       skipCrds: false
   destination:
